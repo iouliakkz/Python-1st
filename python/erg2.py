@@ -1,13 +1,13 @@
 import random
 steps=0
 sum=0
-mylist =['']*9 
 caps=['s','m','l']
 capsno2=['m','l']
 for i in range(100):
     endgame=False
+    mylist =['']*9
     sum+=steps
-    while endgame==False:
+    while True:
         y=random.randint(0,8)# random position in mylist list
         if mylist[y]=='':
             mylist[y]=random.choice(caps)#random cap sto keno
@@ -20,7 +20,7 @@ for i in range(100):
         elif mylist[y]=='m':
             mylist[y]='l' #megalytero tou medium
             steps+=1
-      
+        print("               ")
         print("+----+---+---+")
         print("| "+mylist[0]+"  | "+mylist[1]+ " | "+mylist[2]+ " |") # print row1
         print("+----+---+---+")
@@ -28,6 +28,7 @@ for i in range(100):
         print("+----+---+---+")
         print("| "+mylist[6]+"  | "+mylist[7]+ " | "+mylist[8]+ " |") # print row3
         print("+----+---+---+")
+        print("                ")
 
         #elegxos orizontia
         row1 = mylist[0] == mylist[1] == mylist[2] != ''
